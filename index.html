@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Madrid</title>
+    <style>
+        div{
+            box-shadow: 3px 3px 3px black;
+
+        }
+        img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jugadores del Real Madrid</h1>
+    <div id="contenedor">
+
+    </div>
+    <script>
+        let jugadores = [
+            {
+                nombre:"Mbappé",
+                edad:28,
+                ficha:20000000,
+                foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Picture_with_Mbapp%C3%A9_%28cropped%29_%28cropped%29.jpg/250px-Picture_with_Mbapp%C3%A9_%28cropped%29_%28cropped%29.jpg"
+            },
+            {
+                nombre:"Raúl",
+                edad:48,
+                ficha:30000000,
+                foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Raul_2011-08-03-2_%28cropped%29.jpg/250px-Raul_2011-08-03-2_%28cropped%29.jpg"
+            },
+            {
+                nombre:"Butragueño",
+                edad:40,
+                ficha:50000000,
+                foto: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Emilio_Butrague%C3%B1o_2015_%28cropped%29.jpg"
+            },
+            {
+                nombre:"Zidane",
+                edad:42,
+                ficha:30000000,
+                foto: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Zinedine_Zidane_by_Tasnim_03.jpg"
+
+            },
+        ]
+        for (let i=0;i<jugadores.length;i++){
+            //jugador = jugadores[i];
+            nombreJugador = jugadores[i].nombre;
+            edadJugador = jugadores[i].edad;
+            fichaJugador =jugadores[i].ficha;
+            fotoJugador = jugadores[i].foto;
+            nuevaCaja = document.createElement("div");
+            nuevoH1=document.createElement("h1");
+            nuevoH1.innerHTML = nombreJugador;
+            nuevaCaja.appendChild(nuevoH1);
+            //creo un h2 para contenedor la edad
+            nuevoH2=document.createElement("h2");
+            nuevoH2.innerHTML="Edad:" + edadJugador;
+            nuevaCaja.appendChild(nuevoH2);
+            //creo un h3 para contenedor de la ficha
+            nuevoH3=document.createElement("h3");
+            nuevoH3.innerHTML="Ficha:" + fichaJugador;
+            nuevaCaja.appendChild(nuevoH3);
+            nuevaFoto = document.createElement("img");
+            nuevaFoto.src = fotoJugador;
+            nuevaCaja.appendChild(nuevaFoto)
+            //finalmente agregamos la caja al contenedor 
+            document.getElementById("contenedor").appendChild(nuevaCaja);
+
+        }
+    </script>
+</body>
+</html>
